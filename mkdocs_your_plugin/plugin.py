@@ -64,6 +64,6 @@ class YourPlugin(BasePlugin):
     def on_page_context(self, context, page, config, nav):
         return context
 
-    def on_post_page(self, output_content, page, config, site_nav):
+    def on_post_page(self, output_content, page, config):
         return output_content
 

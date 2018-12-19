@@ -13,7 +13,7 @@ setup(
     license='MIT',
     python_requires='>=2.7',
     install_requires=[
-        'mkdocs>=0.17'
+        'mkdocs>=1.0.4'
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -30,7 +30,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'mkdocs.plugins': [
-            'git-your-plugin = mkdocs_your_plugin.plugin:YourPlugin'
+            'your-plugin = mkdocs_your_plugin.plugin:YourPlugin'
         ]
     }
 )
