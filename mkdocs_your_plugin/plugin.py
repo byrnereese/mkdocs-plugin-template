@@ -17,8 +17,14 @@ class YourPlugin(BasePlugin):
         self.enabled = True
         self.total_time = 0
 
-    def on_serve(self, server):
+    # Global Events 
+    # https://www.mkdocs.org/dev-guide/plugins/#global-events
+
+    def on_serve(self, server, config, builder):
         return server
+
+    def on_config(self, config):
+        return config
 
     def on_pre_build(self, config):
         return
@@ -31,12 +37,15 @@ class YourPlugin(BasePlugin):
 
     def on_env(self, env, config, files):
         return env
-    
-    def on_config(self, config):
-        return config
 
     def on_post_build(self, config):
         return
+
+    def on_build_error(selef, error):
+        return
+
+    # Template Events
+    # https://www.mkdocs.org/dev-guide/plugins/#template-events
 
     def on_pre_template(self, template, template_name, config):
         return template
@@ -46,12 +55,15 @@ class YourPlugin(BasePlugin):
     
     def on_post_template(self, output_content, template_name, config):
         return output_content
+
+    # Page Events
+    # https://www.mkdocs.org/dev-guide/plugins/#page-events
     
     def on_pre_page(self, page, config, files):
         return page
 
     def on_page_read_source(self, page, config):
-        return ""
+        return None
 
     def on_page_markdown(self, markdown, page, config, files):
         return markdown
